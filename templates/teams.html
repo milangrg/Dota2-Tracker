@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Teams Page{% endblock %}
+{% block heading %}
+<h1 style="color:white; text-align:center">Top 30 Pro Teams</h1>
+{% endblock %}
+{% block content %}
+<div class="container">
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Ranking</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Team Logo</th>
+            <th scope="col">Team Name</th>
+            <th scope="col">ID</th>
+            <th scope="col">Wins</th>
+            <th scope="col">Losses</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in range(count)%}
+        <tr style="vertical-align:middle">
+            <td>{{i+1}}</td>
+            <td>{{ratings[i]}}</td>
+            <td><img src="{{logos[i]}}" style="width:150px;height:100px;object-fit:contain"></td>
+            <td>{{names[i]}}</td>
+            <td><a href="#">{{ids[i]}}</a></td>
+            <td>{{wins[i]}}</td>
+            <td>{{losses[i]}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+<table>
+</div>
+{% endblock %}

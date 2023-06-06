@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block heading %}
+<h1 style="color:white; text-align:center">Home</h1>
+{% endblock %}
+{% block content %}
+<h1 style="color:white; text-align:center">Welcome to the Dota 2 Tracker</h1>
+<img src="{{url_for('static', filename='dota2_home.jpg')}}" style="width:100%; height:auto">
+{% endblock %}

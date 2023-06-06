@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Pro Matches Page{% endblock %}
+{% block heading %}
+<h1 style="color:white; text-align:center">Recent Pro Matches</h1>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Match ID</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Radiant</th>
+                <th scope="col">Dire</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in range(count)%}
+            <tr style="vertical-align:middle">
+                <td>
+                    <div>
+                        <div><a href='{{ url_for("promatchdetails", matchid=id[i])}}'>{{id[i]}}</a></div>
+                        <div>{{start_time[i]}} / {{league[i]}}</div>
+                    </div>
+                </td>
+                <td>{{duration[i]}}</td>
+                <td>{{radiant[i]}}</td>
+                <td>{{dire[i]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    <table>
+    </div>
+{% endblock %}
